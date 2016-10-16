@@ -1,2 +1,16 @@
 # shariff-backend-dotnet
-c# backend for Shariff. Shariff enables website users to share their favorite content without compromising their privacy. http://ct.de/-2467514
+
+A c# backend for [https://github.com/heiseonline/shariff](https://github.com/heiseonline/shariff)
+
+Supported services (planed)
+------------------
+- Facebook
+- GooglePlus
+- LinkedIn
+- Xing
+
+## What's next? 
+	
+## License
+
+MIT
