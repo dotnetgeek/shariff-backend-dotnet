@@ -1,0 +1,14 @@
+# nodejs specific
+node_modules
+npm-debug.log
+
+# editor
+.vscode
+.vs
+
+# service specific
+apiState.json
+
+#dotnet
+bin
+obj
