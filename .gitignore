@@ -5,6 +5,7 @@ npm-debug.log
 # editor
 .vscode
 .vs
+tools
 
 # service specific
 apiState.json
