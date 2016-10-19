@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{5715F907-4F5C-405B-B081-EB5295575C90}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shariff.Backend", "src\Shariff.Backend.xproj", "{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E9BD60CE-06E6-4139-9F38-761AE78AF1C4}"
+	ProjectSection(SolutionItems) = preProject
+		global.json = global.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{F14829B2-DDF8-4FAB-9E68-AAD13A2DD7B6}"
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Shariff.Backend.Tests", "tests\Shariff.Backend.Tests.xproj", "{11A49103-40D5-4AEA-821D-0E6FF4083C9C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010}.Release|Any CPU.Build.0 = Release|Any CPU
+		{11A49103-40D5-4AEA-821D-0E6FF4083C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{11A49103-40D5-4AEA-821D-0E6FF4083C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{11A49103-40D5-4AEA-821D-0E6FF4083C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{11A49103-40D5-4AEA-821D-0E6FF4083C9C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8DDA2A63-BBC8-4796-A57A-69C8D5C3C010} = {5715F907-4F5C-405B-B081-EB5295575C90}
+		{11A49103-40D5-4AEA-821D-0E6FF4083C9C} = {F14829B2-DDF8-4FAB-9E68-AAD13A2DD7B6}
+	EndGlobalSection
+EndGlobal
