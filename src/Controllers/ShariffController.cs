@@ -1,4 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System.Collections.Generic;
+using System.Net;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Shariff.Backend.ShareCounts;
 
 namespace Shariff.Backend.Controllers
 {
@@ -6,10 +11,24 @@ namespace Shariff.Backend.Controllers
     public class ShariffController : Controller
     {
         [HttpGet("counts")]
-        public IActionResult GetCounts(
+        public async Task<IActionResult> GetCounts(
             string url)
         {
-            return Json(new { });
+            if (string.IsNullOrWhiteSpace(url))
+                return new StatusCodeResult((int)HttpStatusCode.BadRequest);
+
+            if (!url.StartsWith("http", System.StringComparison.Ordinal) && !url.Contains("://"))
+                url = "http://" + url;
+
+            var encodeUrl = HtmlEncoder.Default.Encode(url);
+
+            var result = new Dictionary<string, string>();
+
+            var xingCounter = await new Xing().Get(encodeUrl);
+            if (!string.IsNullOrWhiteSpace(xingCounter))
+                result.Add("xing", xingCounter);
+
+            return Json(result);
         }
     }
 }
