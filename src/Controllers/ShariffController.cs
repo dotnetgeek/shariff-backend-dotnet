@@ -24,9 +24,13 @@ namespace Shariff.Backend.Controllers
 
             var result = new Dictionary<string, string>();
 
-            var xingCounter = await new Xing().Get(encodeUrl);
-            if (!string.IsNullOrWhiteSpace(xingCounter))
-                result.Add("xing", xingCounter);
+            var xingCount = await new Xing().Get(encodeUrl);
+            if (!string.IsNullOrWhiteSpace(xingCount))
+                result.Add("xing", xingCount);
+
+            var googlePlusCount = await new GooglePlus().Get(encodeUrl);
+            if (!string.IsNullOrWhiteSpace(googlePlusCount))
+                result.Add("googleplus", googlePlusCount);
 
             return Json(result);
         }

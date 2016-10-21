@@ -18,7 +18,21 @@ namespace Shariff.Backend.Tests
 
             _httpTest
                 //xing
-                .RespondWith("{ \"share_counter\": 109 }");
+                .RespondWith("{ \"share_counter\": 109 }")
+                //googleplus
+                .RespondWith("{\"id\": \"p\", " +
+                              "\"result\": { " +
+                                 "\"kind\": \"pos#plusones\", " +
+                                 "\"id\": \"http://www.dotnetgeek.de/about-me\", " +
+                                 "\"isSetByViewer\": false, " +
+                                 "\"metadata\": { " +
+                                     "\"type\": \"URL\", " +
+                                     "\"globalCounts\": { " +
+                                         "\"count\": 5 " +
+                                     "} " +
+                                 "}, " +
+                             "\"abtk\": \"AEIZW7RCLlF9ulguYp8iJbril2j7SiWeBqorYwHNdpN8uxrf1lJRthyvYT4qhzbsBq5S+lwiewI/\"}}");
+
 
             var controller = new ShariffController();
             _actionResult = controller.GetCounts(
@@ -33,6 +47,7 @@ namespace Shariff.Backend.Tests
             var expectedContent = new Dictionary<string, string>
             {
                 ["xing"] = "109",
+                ["googleplus"] = "5",
             };
 
             Assert.NotNull(jsonResult);

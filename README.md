@@ -4,10 +4,10 @@ A c# backend for [https://github.com/heiseonline/shariff](https://github.com/hei
 
 ## Supported services
 - Xing
-
+- GooglePlus
+- 
 ## Services planed
 - Facebook
-- GooglePlus
 - LinkedIn
 
 ## What's next? 
