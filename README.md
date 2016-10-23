@@ -6,9 +6,9 @@ A c# backend for [https://github.com/heiseonline/shariff](https://github.com/hei
 - Xing
 - GooglePlus
 - LinkedIn
- 
-## Services planed
 - Facebook
+  
+## Services planed
 - AddThis
 - Flattr
 - Pinterest

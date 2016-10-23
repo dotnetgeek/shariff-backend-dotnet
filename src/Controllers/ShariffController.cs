@@ -36,6 +36,11 @@ namespace Shariff.Backend.Controllers
             if (!string.IsNullOrWhiteSpace(googlePlusCount))
                 result.Add("googleplus", googlePlusCount);
 
+            var facebookCount = await new Facebook().Get(encodeUrl);
+            if (!string.IsNullOrWhiteSpace(facebookCount))
+                result.Add("facebook", facebookCount);
+
+
             return Json(result);
         }
     }

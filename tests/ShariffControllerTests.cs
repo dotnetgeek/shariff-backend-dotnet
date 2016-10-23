@@ -33,7 +33,12 @@ namespace Shariff.Backend.Tests
                                          "\"count\": 5 " +
                                      "} " +
                                  "}, " +
-                             "\"abtk\": \"AEIZW7RCLlF9ulguYp8iJbril2j7SiWeBqorYwHNdpN8uxrf1lJRthyvYT4qhzbsBq5S+lwiewI/\"}}");
+                             "\"abtk\": \"AEIZW7RCLlF9ulguYp8iJbril2j7SiWeBqorYwHNdpN8uxrf1lJRthyvYT4qhzbsBq5S+lwiewI/\"}}")
+                .RespondWith("{ \"og_object\": { " +
+                    "\"id\": \"3333333\", \"description\": \"dotnet.\", " +
+                    "\"title\": \"dotnet.\", \"type\": \"website\", " +
+                    "\"updated_time\": \"2016-10-09T22:43:47+0000\" }, \"share\": { \"comment_count\": 0, \"share_count\": 672 }," +
+                    "\"id\": \"http://www.dotnetgeek.de/about-me\"}");
 
 
             var controller = new ShariffController();
@@ -51,7 +56,7 @@ namespace Shariff.Backend.Tests
                 ["xing"] = "109",
                 ["googleplus"] = "5",
                 ["linkedin"] = "45",
-
+                ["facebook"] = "672"
             };
 
             Assert.NotNull(jsonResult);
