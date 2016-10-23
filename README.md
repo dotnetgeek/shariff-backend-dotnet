@@ -5,12 +5,16 @@ A c# backend for [https://github.com/heiseonline/shariff](https://github.com/hei
 ## Supported services
 - Xing
 - GooglePlus
-- 
+- LinkedIn
+ 
 ## Services planed
 - Facebook
-- LinkedIn
+- AddThis
+- Flattr
+- Pinterest
+- Reddit
+- StumbleUpon
 
-## What's next? 
 	
 ## License
 
