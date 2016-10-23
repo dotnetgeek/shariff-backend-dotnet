@@ -10,7 +10,7 @@ namespace Shariff.Backend.Tests.ShareCounts
     public class XingTests
     {
         [Fact]
-        public async Task ShouldReturnTheCount()
+        public async Task ShouldReturnTheExpectedCount()
         {
             using (var httpTest = new HttpTest())
             {

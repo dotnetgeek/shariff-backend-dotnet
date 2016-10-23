@@ -1,20 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using Shariff.Backend.ShareCounts;
 using Xunit;
 
-
 namespace Shariff.Backend.Tests.ShareCounts
 {
     public class FacebookTests
     {
-
         [Fact]
-        public async void ShouldReturnTheCount()
+        public async Task ShouldReturnTheExpectedCount()
         {
             using (var httpTest = new HttpTest())
             {
@@ -33,6 +29,5 @@ namespace Shariff.Backend.Tests.ShareCounts
                 Assert.Equal(67284, Convert.ToInt32(count));
             }
         }
-
     }
 }

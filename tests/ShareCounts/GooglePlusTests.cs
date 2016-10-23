@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Net.Http;
+using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using Shariff.Backend.ShareCounts;
 using Xunit;
@@ -8,9 +9,8 @@ namespace Shariff.Backend.Tests.SocialMediaServices
 {
     public class GooglePlusTests
     {
-
         [Fact]
-        public async void ShouldReturnTheExpectedCount()
+        public async Task ShouldReturnTheExpectedCount()
         {
             using (var httpTest = new HttpTest())
             {
@@ -36,6 +36,5 @@ namespace Shariff.Backend.Tests.SocialMediaServices
                 Assert.Equal(5, Convert.ToInt32(count));
             }
         }
-
     }
 }
