@@ -28,6 +28,10 @@ namespace Shariff.Backend.Controllers
             if (!string.IsNullOrWhiteSpace(xingCount))
                 result.Add("xing", xingCount);
 
+            var linkedInCount = await new LinkedIn().Get(encodeUrl);
+            if (!string.IsNullOrWhiteSpace(linkedInCount))
+                result.Add("linkedin", linkedInCount);
+
             var googlePlusCount = await new GooglePlus().Get(encodeUrl);
             if (!string.IsNullOrWhiteSpace(googlePlusCount))
                 result.Add("googleplus", googlePlusCount);

@@ -19,6 +19,8 @@ namespace Shariff.Backend.Tests
             _httpTest
                 //xing
                 .RespondWith("{ \"share_counter\": 109 }")
+                //linkin
+                .RespondWith("{ \"count\": 45, \"fCnt\": \"0\", \"fCntPlusOne\": \"1\", \"url\": \"http://www.dotnetgeek.de/about-me\" }")
                 //googleplus
                 .RespondWith("{\"id\": \"p\", " +
                               "\"result\": { " +
@@ -48,10 +50,21 @@ namespace Shariff.Backend.Tests
             {
                 ["xing"] = "109",
                 ["googleplus"] = "5",
+                ["linkedin"] = "45",
+
             };
 
             Assert.NotNull(jsonResult);
             Assert.Equal(expectedContent, jsonResult.Value);
+        }
+
+        [Fact]
+        public void ShouldReturnABadRequestForEmptyParameter()
+        {
+            var controller = new ShariffController();
+            var actionResult = controller.GetCounts("").Result as StatusCodeResult;
+
+            Assert.Equal(400, actionResult.StatusCode);
         }
 
         public void Dispose()
