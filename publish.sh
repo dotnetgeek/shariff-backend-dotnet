@@ -18,6 +18,7 @@ cd src
 # Create publish artifact
 dotnet publish -o ../artifacts -c Release -f netcoreapp1.0  
 
+cd ..
 # Build the Docker images
 docker build -t $DOCKER_IMAGE_NAME:$SEMVER .
 docker tag $DOCKER_IMAGE_NAME:$SEMVER $DOCKER_IMAGE_NAME:latest
