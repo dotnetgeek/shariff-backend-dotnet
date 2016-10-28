@@ -62,8 +62,5 @@
     },
     "projectUrl": "https://github.com/dotnetgeek/dotnet-publish-docker",
     "licenseUrl": "https://github.com/dotnetgeek/dotnet-publish-docker/blob/master/LICENSE"
-  },
-  "scripts": {
-    "postpublish": [ "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%" ]
   }
 }
