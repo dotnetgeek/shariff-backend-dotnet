@@ -5,5 +5,12 @@ mono: none
 dotnet: 1.0.0-preview2-003131
 before_script:
   - chmod a+x ./build.sh
+  - chmod a+x ./publish.sh
 script:
   - ./build.sh
+deploy:
+  - provider: script
+    script: ./publish.sh $TRAVIS_TAG $DOCKER_USERNAME $DOCKER_PASSWORD
+    skip_cleanup: true
+    on:
+      tags: true
