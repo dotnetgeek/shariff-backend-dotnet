@@ -1,10 +1,16 @@
 #!/bin/bash
 set -ev
 
-SEMVER=$1
+TAG=$1
 DOCKER_USERNAME=$2
 DOCKER_PASSWORD=$3
 DOCKER_IMAGE_NAME="dotnetgeek/shariff-backend-dotnet"
+
+IFS='.' read -r -a tag_array <<< "$TAG"
+MAJOR="${tag_array[0]//v}"
+MINOR=${tag_array[1]}
+BUILD=${tag_array[2]}
+SEMVER="$MAJOR.$MINOR.$BUILD"
 
 rm -rf artifacts
 
