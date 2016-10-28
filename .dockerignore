@@ -6,5 +6,4 @@
 .vscode
 Dockerfile
 README.md
-artifacts
 node_modules
