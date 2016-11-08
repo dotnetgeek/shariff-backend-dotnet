@@ -4,6 +4,8 @@ using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using Shariff.Backend.ShareCounts;
 using Xunit;
+using Moq;
+using Microsoft.Extensions.Logging;
 
 namespace Shariff.Backend.Tests.SocialMediaServices
 {
@@ -27,7 +29,8 @@ namespace Shariff.Backend.Tests.SocialMediaServices
                                  "}, " +
                              "\"abtk\": \"AEIZW7RCLlF9ulguYp8iJbril2j7SiWeBqorYwHNdpN8uxrf1lJRthyvYT4qhzbsBq5S+lwiewI/\"}}");
 
-                var count = await new GooglePlus().Get("http://www.dotnetgeek.de/test-url");
+                var logger = new Mock<ILogger>().Object;
+                var count = await new GooglePlus(logger).Get("http://www.dotnetgeek.de/test-url");
 
                 httpTest.ShouldHaveCalled("https://clients6.google.com/rpc?key=*")
                     .WithVerb(HttpMethod.Post)

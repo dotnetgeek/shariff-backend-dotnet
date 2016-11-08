@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using Shariff.Backend.ShareCounts;
 using Xunit;
+using Moq;
+using Microsoft.Extensions.Logging;
+
 
 namespace Shariff.Backend.Tests.ShareCounts
 {
@@ -16,7 +19,8 @@ namespace Shariff.Backend.Tests.ShareCounts
             {
                 httpTest.RespondWith("{ \"count\": 459, \"fCnt\": \"0\", \"fCntPlusOne\": \"1\", \"url\": \"http://www.dotnetgeek.de/test-url\" }");
 
-                var count = await new LinkedIn().Get("http://www.dotnetgeek.de/test-url");
+                var logger = new Mock<ILogger>().Object;
+                var count = await new LinkedIn(logger).Get("http://www.dotnetgeek.de/test-url");
 
                 httpTest.ShouldHaveCalled("https://www.linkedin.com/countserv/count/share*")
                     .WithVerb(HttpMethod.Get)

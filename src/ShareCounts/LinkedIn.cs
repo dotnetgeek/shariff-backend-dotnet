@@ -1,13 +1,15 @@
 ﻿using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Shariff.Backend.ShareCounts
 {
     public class LinkedIn : ShareCountServiceBase
     {
-        public LinkedIn() :
-            base("linkedin")
+        public LinkedIn(
+            ILogger logger) :
+            base("linkedin", logger)
         {
         }
 

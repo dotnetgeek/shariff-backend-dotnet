@@ -4,6 +4,9 @@ using System.Threading.Tasks;
 using Flurl.Http.Testing;
 using Shariff.Backend.ShareCounts;
 using Xunit;
+using Moq;
+using Microsoft.Extensions.Logging;
+
 
 namespace Shariff.Backend.Tests.ShareCounts
 {
@@ -16,7 +19,8 @@ namespace Shariff.Backend.Tests.ShareCounts
             {
                 httpTest.RespondWith("{ \"share_counter\": 209 }");
 
-                var count = await new Xing().Get("http://www.dotnetgeek.de/test-url");
+                var logger = new Mock<ILogger>().Object;
+                var count = await new Xing(logger).Get("http://www.dotnetgeek.de/test-url");
 
 
                 httpTest.ShouldHaveCalled("https://www.xing-share.com/spi/shares/statistics")

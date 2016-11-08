@@ -2,17 +2,6 @@
 
 namespace Shariff.Backend.ShareCounts
 {
-    /*
-
-        {
-    "count": 0,
-    "fCnt": "0",
-    "fCntPlusOne": "1",
-    "url": "http://www.dotnetgeek.de/test"
-}
-
-    */
-
     public class LinkedInResponse
     {
         [JsonProperty("count")]

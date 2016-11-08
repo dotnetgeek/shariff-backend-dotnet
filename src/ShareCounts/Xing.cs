@@ -1,12 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Flurl.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Shariff.Backend.ShareCounts
 {
     public class Xing : ShareCountServiceBase
     {
-        public Xing() : 
-            base("xing")
+        public Xing(
+            ILogger logger) : 
+            base("xing", logger)
         {
         }
 

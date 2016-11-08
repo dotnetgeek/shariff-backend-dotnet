@@ -2,13 +2,15 @@
 using System.Threading.Tasks;
 using Flurl;
 using Flurl.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Shariff.Backend.ShareCounts
 {
     public class Facebook : ShareCountServiceBase
     {
-        public Facebook()
-            :base("facebook")
+        public Facebook(
+            ILogger logger)
+            :base("facebook", logger)
         {
         }
 

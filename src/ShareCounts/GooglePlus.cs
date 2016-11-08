@@ -1,12 +1,14 @@
 ﻿using System.Threading.Tasks;
 using Flurl.Http;
+using Microsoft.Extensions.Logging;
 
 namespace Shariff.Backend.ShareCounts
 {
     public class GooglePlus : ShareCountServiceBase
     {
-        public GooglePlus() : 
-            base("googleplus")
+        public GooglePlus(
+            ILogger logger) : 
+            base("googleplus", logger)
         {
         }
 

@@ -1,7 +1,9 @@
 {
+  "copyright": "DotNetGeek (Daniel Mueller)",
+  "description": "c# backend for Shariff.",
   "title": "Shariff.Backend",
-  "version": "1.0.0-*",
-  "authors": [ "Daniel M�ller" ],
+  "version": "0.1.4",
+  "authors": [ "Daniel Mueller" ],
   "dependencies": {
     "NETStandard.Library": "1.6.0",
     "Microsoft.AspNetCore.Mvc": "1.0.0",

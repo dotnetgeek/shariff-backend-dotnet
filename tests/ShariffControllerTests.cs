@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using Flurl.Http.Testing;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
+using Moq;
 using Shariff.Backend.Controllers;
 using Xunit;
 
@@ -40,8 +42,9 @@ namespace Shariff.Backend.Tests
                     "\"updated_time\": \"2016-10-09T22:43:47+0000\" }, \"share\": { \"comment_count\": 0, \"share_count\": 672 }," +
                     "\"id\": \"http://www.dotnetgeek.de/about-me\"}");
 
+            var logger = new Mock<ILogger<ShariffController>>().Object;
 
-            var controller = new ShariffController();
+            var controller = new ShariffController(logger);
             _actionResult = controller.GetCounts(
                 "http://www.dotnetgeek.de/about-me").Result;
         }
@@ -66,7 +69,8 @@ namespace Shariff.Backend.Tests
         [Fact]
         public void ShouldReturnABadRequestForEmptyParameter()
         {
-            var controller = new ShariffController();
+            var logger = new Mock<ILogger<ShariffController>>().Object;
+            var controller = new ShariffController(logger);
             var actionResult = controller.GetCounts("").Result as StatusCodeResult;
 
             Assert.Equal(400, actionResult.StatusCode);
